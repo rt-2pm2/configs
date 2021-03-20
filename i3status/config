@@ -10,7 +10,7 @@ general {
 order += "path_exists VPN"
 order += "wireless wlp2s0"
 order += "wireless wlx00e04c2c41cf"
-order += "ethernet eth0"
+order += "ethernet eno1"
 order += "battery 0"
 order += "cpu_temperature 0"
 order += "load"
@@ -29,7 +29,7 @@ wireless wlx00e04c2c41cf {
         format_down = "W: down"
 }
 
-ethernet eth0 {
+ethernet eno1 {
         # if you use %speed, i3status requires the cap_net_admin capability
         format_up = "E: (%speed)"
         format_down = "E: down"
@@ -59,6 +59,7 @@ run_watch VPNC {
 path_exists VPN {
         # path exists when a VPN tunnel launched by nmcli/nm-applet is active
         path = "/proc/sys/net/ipv4/conf/tun0"
+	path = "/proc/sys/net/ipv4/conf/nordlynx"
 }
 
 tztime local {
