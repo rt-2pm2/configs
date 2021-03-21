@@ -186,18 +186,29 @@ bar {
 
 
 
-## MY STUFF
+# ===================================================================
+# MY STUFF
+
+# LockScreen
+bindsym $mod+Ctrl+l exec --no-startup-id i3lock -f -c 005000 --nofork
+
+## Keyboard layout
+#exec --no-startup-id setxkbmap -option grp:alt_shift_toggle -layout us,ru
+
+## Device keys
 # Touchpad tapping
-exec --no-startup-id xinput set-prop 13 288 1
-exec --no-startup-id xinput set-prop 13 280 1
+#exec --no-startup-id xinput set-prop 13 288 1
+#exec --no-startup-id xinput set-prop 13 280 1
 
 # Wallpaper
-bindsym $mod+Control+l exec i3lock -f -c 005000
-
 exec --no-startup-id xsetroot -solid "#333333"
 exec --no-startup-id xrandr --output eDP1 --auto
 
 # Guake
 for_window [instance="guake"] floating enable
 exec --no-startup-id guake
+
+
+# Wallpaper
+#exec --no-startup-id feh --bg-max ~/something.jpg
 
