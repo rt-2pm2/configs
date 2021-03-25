@@ -189,6 +189,10 @@ bar {
 # ===================================================================
 # MY STUFF
 
+# Backligth (after installing ligth: apt install light)
+bindsym XF86MonBrightnessUp exec light -A 1 # increase screen brightness
+bindsym XF86MonBrightnessDown exec light -U 1 # decrease screen brightness
+
 # LockScreen
 bindsym $mod+Ctrl+l exec --no-startup-id i3lock -f -c 005000 --nofork
 
