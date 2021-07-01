@@ -11,6 +11,7 @@
 
 set $mod Mod4
 
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:monospace 12
@@ -189,15 +190,20 @@ bar {
 # ===================================================================
 # MY STUFF
 
+
 # Backligth (after installing ligth: apt install light)
 bindsym XF86MonBrightnessUp exec light -A 1 # increase screen brightness
 bindsym XF86MonBrightnessDown exec light -U 1 # decrease screen brightness
 
+#exec --no-startup-id xsetroot -solid "#333333"
+
 # LockScreen
 bindsym $mod+Ctrl+l exec --no-startup-id i3lock -f -c 005000 --nofork
 
+
 ## Keyboard layout
-#exec --no-startup-id setxkbmap -option grp:alt_shift_toggle -layout us,ru
+#exec "setxkbmap -option 'grp:alt_shift_toggle' -layout us,ru"
+exec_always --no-startup-id "setxkbmap -model pc105 -layout us,ru -variant ,, -option grp:alt_shift_toggle"
 
 ## Device keys
 # Touchpad tapping
@@ -205,7 +211,6 @@ bindsym $mod+Ctrl+l exec --no-startup-id i3lock -f -c 005000 --nofork
 #exec --no-startup-id xinput set-prop 13 280 1
 
 # Wallpaper
-exec --no-startup-id xsetroot -solid "#333333"
 exec --no-startup-id xrandr --output eDP1 --auto
 
 # Guake
@@ -214,5 +219,6 @@ exec --no-startup-id guake
 
 
 # Wallpaper
-#exec --no-startup-id feh --bg-max ~/something.jpg
+#exec_always --no-startup-id xsetroot -solid "#111111"
+exec_always --no-startup-id feh --bg-max ~/Pictures/pluot.png
 
